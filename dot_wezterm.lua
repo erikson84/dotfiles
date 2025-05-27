@@ -1,6 +1,6 @@
 -- Pull in the wezterm API
 local wezterm = require("wezterm")
-local mux = wezterm.mux
+-- local mux = wezterm.mux
 
 
 -- This table will hold the configuration.
@@ -57,10 +57,10 @@ config.use_fancy_tab_bar = false
 config.leader = { key = 'Space', mods = 'CTRL', timeout_milliseconds = 1000 }
 config.default_cursor_style = 'BlinkingBlock'
 config.custom_block_glyphs = false
-wezterm.on('gui-startup', function(cmd)
-  local tab, pane, window = mux.spawn_window(cmd or {})
-  window:gui_window():maximize()
-end)
+-- wezterm.on('gui-startup', function(cmd)
+--   local tab, pane, window = mux.spawn_window(cmd or {})
+--   window:gui_window():maximize()
+-- end)
 
 config.keys = {
   {
