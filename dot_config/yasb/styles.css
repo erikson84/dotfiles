@@ -115,6 +115,10 @@
 /* ==================== */
 /* === POWER MENU === */
 /* ==================== */
+.power-menu-widget {
+    margin-right: 10px;
+}
+
 .power-menu-widget .label {
     color: var(--red);
     font-size: 13px;
@@ -353,6 +357,7 @@
     width: 10px;
     height: 10px;
     cursor: pointer;
+    transition: all 10s ease;
 }
 
 .glazewm-workspaces .ws-btn:hover {
@@ -361,6 +366,11 @@
 
 .glazewm-workspaces .ws-btn.populated {
     background-color: var(--sky);
+}
+
+.glazewm-workspaces .ws-btn:hover, 
+.glazewm-workspaces .ws-btn.populated:hover {
+    background-color: var(--mauve);
 }
 
 .glazewm-workspaces .ws-btn.active_populated,
@@ -414,6 +424,7 @@
 /* ================= */
 .home-widget {
     padding: 0 4px 0 12px;
+    transition: all 1.0s ease-in;
 }
 
 .home-widget .icon:hover {

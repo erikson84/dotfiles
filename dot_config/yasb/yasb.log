@@ -1208,3 +1208,39 @@ systray:
 2025-05-29 16:09:13,641 [DEBUG] [MainThread] [qasync._windows._EventPoller/_windows.py:213]: Starting (proactor: <_IocpProactor overlapped#=0 result#=0>)...
 2025-05-29 16:09:13,642 [DEBUG] [Dummy-5] [qasync._windows._EventWorker/_windows.py:192]: Thread started
 2025-05-29 16:09:13,849 [INFO] [MainThread] [root/weather.py:67]: Fetching new weather data at 2025-05-29 16:09:13.849601
+2025-05-29 16:19:11,939 [INFO] [MainThread] [root/weather.py:67]: Fetching new weather data at 2025-05-29 16:19:11.939479
+2025-05-29 16:29:12,478 [INFO] [MainThread] [root/weather.py:67]: Fetching new weather data at 2025-05-29 16:29:12.478557
+2025-05-29 16:29:44,941 [INFO] [MainThread] [root/controller.py:12]: Reloading Application from tray...
+2025-05-29 16:29:45,055 [INFO] [MainThread] [cli_server/cli_server.py:112]: Log pipe server stopped
+2025-05-29 16:29:45,055 [DEBUG] [MainThread] [cli_server/cli_server.py:206]: CLI server stopped
+2025-05-29 16:29:45,171 [DEBUG] [MainThread] [qasync._windows._EventPoller/_windows.py:218]: Stopping worker thread...
+2025-05-29 16:29:45,195 [DEBUG] [Dummy-5] [qasync._windows._EventWorker/_windows.py:201]: Exiting thread
+2025-05-29 16:29:45,197 [DEBUG] [MainThread] [qasync._windows._IocpProactor/_windows.py:75]: Closing
+2025-05-29 16:29:45,219 [ERROR] [Dummy-6] [root/event_service.py:30]: Failed to emit signal <bound PYQT_SIGNAL window_name_change of ActiveWindowWidget object at 0x000001F8C90A31B0>. Removing link to WinEvent.EventObjectNameChange.
+2025-05-29 16:29:45,240 [ERROR] [Dummy-6] [root/event_service.py:30]: Failed to emit signal <bound PYQT_SIGNAL window_name_change of ActiveWindowWidget object at 0x000001F8C90A31B0>. Removing link to WinEvent.EventObjectStateChange.
+2025-05-29 16:29:48,245 [INFO] [MainThread] [root/log.py:59]: Yasb v1.7.4
+2025-05-29 16:29:48,256 [INFO] [Thread-1 (_run_server)] [cli_server/cli_server.py:212]: CLI server started v1.1.1
+2025-05-29 16:29:48,256 [INFO] [MainThread] [cli_server/cli_server.py:104]: Log pipe server started
+2025-05-29 16:29:49,688 [DEBUG] [MainThread] [tzlocal/win32.py:55]: Looking up time zone info from registry
+2025-05-29 16:29:53,525 [DEBUG] [MainThread] [comtypes/__init__.py:149]: CoInitializeEx(None, 2)
+2025-05-29 16:29:54,297 [INFO] [MainThread] [root/watcher.py:55]: Created file watcher for path C:\Users\S044207629\.config\yasb
+2025-05-29 16:29:54,626 [DEBUG] [MainThread] [qasync._windows._EventPoller/_windows.py:213]: Starting (proactor: <_IocpProactor overlapped#=0 result#=0>)...
+2025-05-29 16:29:54,627 [DEBUG] [Dummy-5] [qasync._windows._EventWorker/_windows.py:192]: Thread started
+2025-05-29 16:29:54,861 [INFO] [MainThread] [root/weather.py:67]: Fetching new weather data at 2025-05-29 16:29:54.861813
+2025-05-29 16:39:52,055 [INFO] [MainThread] [root/weather.py:67]: Fetching new weather data at 2025-05-29 16:39:52.055495
+2025-05-29 16:41:42,240 [INFO] [MainThread] [root/controller.py:12]: Reloading Application from tray...
+2025-05-29 16:41:42,350 [INFO] [MainThread] [cli_server/cli_server.py:112]: Log pipe server stopped
+2025-05-29 16:41:42,350 [DEBUG] [MainThread] [cli_server/cli_server.py:206]: CLI server stopped
+2025-05-29 16:41:42,418 [DEBUG] [MainThread] [qasync._windows._EventPoller/_windows.py:218]: Stopping worker thread...
+2025-05-29 16:41:42,442 [DEBUG] [Dummy-5] [qasync._windows._EventWorker/_windows.py:201]: Exiting thread
+2025-05-29 16:41:42,444 [DEBUG] [MainThread] [qasync._windows._IocpProactor/_windows.py:75]: Closing
+2025-05-29 16:41:44,221 [INFO] [MainThread] [root/log.py:59]: Yasb v1.7.4
+2025-05-29 16:41:44,232 [INFO] [Thread-1 (_run_server)] [cli_server/cli_server.py:212]: CLI server started v1.1.1
+2025-05-29 16:41:44,232 [INFO] [MainThread] [cli_server/cli_server.py:104]: Log pipe server started
+2025-05-29 16:41:44,579 [DEBUG] [MainThread] [tzlocal/win32.py:55]: Looking up time zone info from registry
+2025-05-29 16:41:46,782 [DEBUG] [MainThread] [comtypes/__init__.py:149]: CoInitializeEx(None, 2)
+2025-05-29 16:41:47,420 [INFO] [MainThread] [root/watcher.py:55]: Created file watcher for path C:\Users\S044207629\.config\yasb
+2025-05-29 16:41:47,511 [DEBUG] [MainThread] [qasync._windows._EventPoller/_windows.py:213]: Starting (proactor: <_IocpProactor overlapped#=0 result#=0>)...
+2025-05-29 16:41:47,512 [DEBUG] [Dummy-5] [qasync._windows._EventWorker/_windows.py:192]: Thread started
+2025-05-29 16:41:47,745 [INFO] [MainThread] [root/weather.py:67]: Fetching new weather data at 2025-05-29 16:41:47.745810
+2025-05-29 16:51:45,711 [INFO] [MainThread] [root/weather.py:67]: Fetching new weather data at 2025-05-29 16:51:45.711032
