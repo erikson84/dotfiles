@@ -29,14 +29,14 @@
     --overlay0: #6c7086;
 
 /* Surface colors */
-    --surface2: #585b70;
-    --surface1: rgba(69, 71, 90, 0.6);
+    --surface2: rgba(88, 91, 112, 0.7);
+    --surface1: rgba(69, 71, 90, 0.7);
     --surface0: #282936;
 
 /* Base colors */
-    --base: rgba(30, 30, 46, 0.5);
-    --mantle: rgba(24, 24, 37, 0.5);
-    --crust: rgba(17, 17, 27, 0.4);
+    --base: rgba(30, 30, 46, 0.8);
+    --mantle: rgba(24, 24, 37, 0.8);
+    --crust: rgba(17, 17, 27, 0.8);
 }
 
 /* ================= */
@@ -45,8 +45,8 @@
 * {
     font-size: 14px;
     color: var(--text);
-    font-weight: bold;
-    font-family: "VictorMono NF";
+    font-weight: 500;
+    font-family: "Hack NF";
     font-style: normal;
     margin: 0;
     padding: 0;
@@ -58,7 +58,7 @@
 .yasb-bar {
     padding: 0;
     margin: 0;
-    background-color: var(--base);
+    background-color: var(--crust);
     border-radius: 40px;
 }
 
@@ -93,7 +93,7 @@
 .volume-widget,
 .weather-widget,
 .clock-widget {
-  background-color: var(--surface1);
+  background-color: var(--surface2);
   margin: 4px 0;
 }
 
@@ -105,12 +105,24 @@
   margin-right: 10px;
 }
 
+
 .clock-widget,
 .memory-widget,
 .wifi-widget {
     border-top-left-radius: 12px;
     border-bottom-left-radius: 12px;
 }
+
+.memory-widget:hover,
+.cpu-widget:hover,
+.battery-widget:hover,
+.wifi-widget:hover,
+.volume-widget:hover,
+.weather-widget:hover,
+.clock-widget:hover {
+  background-color: var(--overlay1);
+}
+
 
 /* ==================== */
 /* === POWER MENU === */
@@ -121,12 +133,10 @@
 
 .power-menu-widget .label {
     color: var(--red);
-    font-size: 13px;
 }
 
 .power-menu-widget:hover {
-  background-color: var(--surface1);
-  margin: 4px 0;
+  background-color: var(--overlay1);
   border-radius: 10px;
 }
 
@@ -328,7 +338,6 @@
 /* ==================== */
 .weather-widget .icon {
     font-size: 20px;
-    margin: 0 2px 1px 0;
     color: var(--maroon);
 }
 
@@ -341,16 +350,20 @@
 /* === WORKSPACE WIDGET === */
 /* ====================== */
 .glazewm-workspaces {
-    background-color: var(--surface1);
+    background-color: var(--surface2);
     margin: 4px 0;
     border-radius: 12px;
     border: 0;
 }
 
+.glazewm-workspaces:hover {
+    background-color: var(--overlay1);
+}
+
 .glazewm-workspaces .ws-btn {
     font-size: 14px;
     color: rgba(0, 0, 0, 0);
-    background-color: var(--overlay1);
+    background-color: var(--overlay0);
     margin: 0px 4px;
     border-radius: 5px;
     border: none;
@@ -428,7 +441,7 @@
 }
 
 .home-widget .icon:hover {
-  background-color: var(--surface1);
+  background-color: var(--overlay1);
   margin: 4px 0;
   border-radius: 10px;
 }

@@ -59,9 +59,9 @@ widgets:
       menu_list:
         - { title: "Home", path: "~" }
         - { title: "Downloads", path: "~\\Downloads"}
-        - { title: "Documents", path: "~\\Documents"}
-        - { title: "Pictures", path: "~\\Pictures"}
-        - { title: "Videos", path: "~\\Videos"}
+        - { title: "Documentos", path: "~\\Documents"}
+        - { title: "Imagens", path: "~\\Pictures"}
+        - { title: "Vídeos", path: "~\\Videos"}
       system_menu: true
       power_menu: false
       blur: true
@@ -148,11 +148,11 @@ widgets:
     type: "yasb.weather.WeatherWidget"
     options:
       label: "<span>{icon}</span> {temp}"
-      label_alt: "{location}: {conditions}, Min {min_temp}, Max {max_temp}, Humidity {humidity}"
+      label_alt: "{location}: {conditions}, Mín {min_temp}, Máx {max_temp}, Umidade {humidity}"
       api_key: '24b6c2cda6d84066b0304531241908'
       update_interval: 600
       hide_decimal: true
-      location: "Florianópolis, Brazil"
+      location: "Florianópolis"
       units: "metric"
       callbacks:
         on_left: "toggle_card"
@@ -179,8 +179,8 @@ widgets:
   wifi:
     type: "yasb.wifi.WifiWidget"
     options:
-      label: "<span>{wifi_icon}</span> {wifi_strength}%"
-      label_alt: "<span>{wifi_icon}</span> {wifi_name} {wifi_strength}%"
+      label_alt: "<span>{wifi_icon}</span> {wifi_strength}%"
+      label: "<span>{wifi_icon}</span> {wifi_name}"
       ethernet_label: "<span>{wifi_icon}</span>"
       ethernet_label_alt: "<span>{wifi_icon}</span> {wifi_name}"
       ethernet_icon: "\uf108"
@@ -228,16 +228,16 @@ widgets:
   power_menu:
     type: "yasb.power_menu.PowerMenuWidget"
     options:
-      label: "\uf011"
+      label: "󰐥"
       uptime: True
       blur: False
       blur_background: True
       animation_duration: 200
       button_row: 5
       buttons:
-        shutdown: ["\uf011", "Shut Down"]
-        restart: ["\uead2", "Restart"]
-        signout: ["\udb80\udf43", "Sign out"]
-        hibernate: ["\uf28e", "Hibernate"]
-        sleep: ["\u23fe", "Sleep"]
-        cancel: ["", "Cancel"]
+        shutdown: ["󰐥", "Desligar"]
+        restart: ["\uead2", "Reiniciar"]
+        signout: ["\udb80\udf43", "Encerrar sessão"]
+        hibernate: ["\uf28e", "Hibernar"]
+        sleep: ["\u23fe", "Suspender"]
+        cancel: ["", "Cancelar"]
