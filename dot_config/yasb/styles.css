@@ -100,8 +100,8 @@
 .weather-widget,
 .battery-widget,
 .volume-widget {
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
   margin-right: 10px;
 }
 
@@ -120,7 +120,7 @@
 .volume-widget:hover,
 .weather-widget:hover,
 .clock-widget:hover {
-  background-color: var(--overlay1);
+  background-color: var(--overlay0);
 }
 
 
@@ -136,8 +136,8 @@
 }
 
 .power-menu-widget:hover {
-  background-color: var(--overlay1);
-  border-radius: 10px;
+  background-color: var(--overlay0);
+  border-radius: 12px;
 }
 
 .power-menu-popup {
@@ -271,8 +271,6 @@
 /* === CLOCK WIDGET === */
 /* ================= */
 .clock-widget {
-    border-top-left-radius: 12px;
-    border-bottom-left-radius: 12px;
     border: 0;
 }
 
@@ -357,13 +355,13 @@
 }
 
 .glazewm-workspaces:hover {
-    background-color: var(--overlay1);
+    background-color: var(--overlay0);
 }
 
 .glazewm-workspaces .ws-btn {
     font-size: 14px;
     color: rgba(0, 0, 0, 0);
-    background-color: var(--overlay0);
+    background-color: var(--overlay2);
     margin: 0px 4px;
     border-radius: 5px;
     border: none;
@@ -441,9 +439,9 @@
 }
 
 .home-widget .icon:hover {
-  background-color: var(--overlay1);
+  background-color: var(--overlay0);
   margin: 4px 0;
-  border-radius: 10px;
+  border-radius: 12px;
 }
 
 .home-widget .icon {
