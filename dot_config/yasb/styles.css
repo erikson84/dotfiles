@@ -45,9 +45,9 @@
 * {
     font-size: 14px;
     color: var(--text);
-    font-weight: 500;
-    font-family: "Hack NF";
+    font-family: "Hack Nerd Font";
     font-style: normal;
+    font-weight: 500;
     margin: 0;
     padding: 0;
 }
@@ -133,10 +133,12 @@
 
 .power-menu-widget .label {
     color: var(--red);
+    font-size: 15px;
 }
 
 .power-menu-widget:hover {
   background-color: var(--overlay0);
+  margin: 4px 6px 4px 2px;
   border-radius: 12px;
 }
 
@@ -349,7 +351,7 @@
 /* ====================== */
 .glazewm-workspaces {
     background-color: var(--surface2);
-    margin: 4px 0;
+    margin: 4px 4px;
     border-radius: 12px;
     border: 0;
 }
@@ -392,6 +394,28 @@
     height: 10px;
     border-radius: 4px;
   }
+
+/* ================================== */
+/* === WORKSPACE DIRECTION WIDGET === */
+/* ================================== */
+.glazewm-tiling-direction {
+    background-color: var(--surface2);
+    margin: 4px 4px;
+    border-radius: 12px;
+    border: 0;
+}
+
+.glazewm-tiling-direction:hover {
+    background-color: var(--overlay0);
+}
+
+.glazewm-tiling-direction .btn,
+.glazewm-tiling-direction .btn:hover {
+    border: none;
+    font-size: 16px;
+    padding: 0 8px;
+    background-color: transparent;
+}
 
 /* ================= */
 /* === WIFI WIDGET === */

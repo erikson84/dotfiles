@@ -37,6 +37,7 @@ bars:
       left: [
           "home", 
           "glazewm_workspaces", 
+          "glazewm_tiling_direction",
           "active_window",
       ]
       center: [
@@ -77,6 +78,11 @@ widgets:
       offline_label: "GlazeWM Offline"
       hide_empty_workspaces: true
       hide_if_offline: false
+  glazewm_tiling_direction:
+    type: "glazewm.tiling_direction.GlazewmTilingDirectionWidget"
+    options:
+      horizontal_label: "\udb81\udce1"
+      vertical_label: "\udb81\udce2"   
   memory:
     type: "yasb.memory.MemoryWidget"
     options:
@@ -228,14 +234,14 @@ widgets:
   power_menu:
     type: "yasb.power_menu.PowerMenuWidget"
     options:
-      label: "󰐥"
+      label: "\uf011"
       uptime: True
       blur: False
       blur_background: True
       animation_duration: 200
       button_row: 5
       buttons:
-        shutdown: ["󰐥", "Desligar"]
+        shutdown: ["\uf011", "Desligar"]
         restart: ["\uead2", "Reiniciar"]
         signout: ["\udb80\udf43", "Encerrar sessão"]
         hibernate: ["\uf28e", "Hibernar"]
