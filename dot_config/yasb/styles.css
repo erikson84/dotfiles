@@ -36,7 +36,7 @@
 /* Base colors */
     --base: rgba(30, 30, 46, 0.8);
     --mantle: rgba(24, 24, 37, 0.8);
-    --crust: rgba(17, 17, 27, 0.8);
+    --crust: rgba(17, 17, 27, 0.6);
 }
 
 /* ================= */
@@ -133,7 +133,7 @@
 
 .power-menu-widget .label {
     color: var(--red);
-    font-size: 15px;
+    font-size: 14px;
 }
 
 .power-menu-widget:hover {
@@ -369,8 +369,6 @@
     border: none;
     width: 10px;
     height: 10px;
-    cursor: pointer;
-    transition: all 10s ease;
 }
 
 .glazewm-workspaces .ws-btn:hover {
@@ -459,7 +457,6 @@
 /* ================= */
 .home-widget {
     padding: 0 4px 0 12px;
-    transition: all 1.0s ease-in;
 }
 
 .home-widget .icon:hover {
@@ -496,4 +493,10 @@
     max-height: 1px;
     background-color: var(--overlay0);
     margin: 0 8px;
+}
+
+.active-window-widget .widget-container .icon,
+.active-window-widget .widget-container .label {
+  margin: 0;
+  padding: 0;
 }

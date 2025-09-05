@@ -18,7 +18,7 @@ bars:
       duration: 1000
     blur_effect:
       enabled: true 
-      acrylic: true 
+      acrylic: false 
       dark_mode: false
       round_corners: true
       border_color: None
@@ -29,7 +29,7 @@ bars:
       width: "99%"
       height: 32
     padding:
-      top: 5
+      top: 2
       left: 0
       bottom: 0
       right: 0
@@ -72,12 +72,26 @@ widgets:
       alignment: "left"
       offset_left: 4
       offset_top: 0
+      animation:
+        enabled: true
+        type: 'fadeInOut' 
+        duration: 1000
+      menu_labels:
+        shutdown: "Desligar"
+        restart: "Reiniciar"
+        logout: "Encerrar sessão"
+        lock: "Bloquear"
+        sleep: "Suspender"
+        system: "Configurações do Sistema"
+        about: "Sobre esse Computador"
+        task_manager: "Gerenciador de Tarefas"
   glazewm_workspaces:
     type: "glazewm.workspaces.GlazewmWorkspacesWidget"
     options:
       offline_label: "GlazeWM Offline"
       hide_empty_workspaces: true
       hide_if_offline: false
+      enable_scroll_switching: true
   glazewm_tiling_direction:
     type: "glazewm.tiling_direction.GlazewmTilingDirectionWidget"
     options:
@@ -86,7 +100,7 @@ widgets:
   memory:
     type: "yasb.memory.MemoryWidget"
     options:
-      label: "<span></span> {virtual_mem_outof}"
+      label: "<span></span> {virtual_mem_percent}%"
       label_alt: "<span></span> {virtual_mem_outof}"
       update_interval: 10000
       callbacks:
@@ -115,14 +129,14 @@ widgets:
       label_no_window: ""
       label_icon: true
       label_icon_size: 14
-      max_length: 50
+      max_length: 35
       max_length_ellipsis: "..."
       monitor_exclusive: true
   clock:
     type: "yasb.clock.ClockWidget"
     options:
       label_alt: "<span>\uf017</span>{%H:%M}"
-      label: '<span>󰃭</span>{%a, %d %B %y}<span> </span> {%H:%M}'
+      label: '<span>󰃭</span>{%a, %d %B %y} <span> </span> {%H:%M}'
       locale: "pt_BR"
       timezones: []
       calendar:
@@ -155,10 +169,10 @@ widgets:
     options:
       label: "<span>{icon}</span> {temp}"
       label_alt: "{location}: {conditions}, Mín {min_temp}, Máx {max_temp}, Umidade {humidity}"
-      api_key: '24b6c2cda6d84066b0304531241908'
+      api_key: '6be713549ab645f996d181703252306'
       update_interval: 600
       hide_decimal: true
-      location: "Florianópolis"
+      location: "Florianopolis"
       units: "metric"
       callbacks:
         on_left: "toggle_card"

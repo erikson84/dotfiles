@@ -143,7 +143,6 @@ window_rules:
     match:
       # Ignores any Zebar windows.
       - window_process: { equals: 'zebar' }
-      - window_process: { equals: 'ovpnserpro' }
 
       # Ignores picture-in-picture windows for browsers.
       - window_title: { regex: '[Pp]icture.in.[Pp]icture' }
@@ -156,6 +155,7 @@ window_rules:
         window_title: { regex: '.*? - Peek' }
       - window_process: { equals: 'Lively' }
         window_class: { regex: 'HwndWrapper' }
+      - window_process: { equals: 'ovpnserpro' }
 
 binding_modes:
   # When enabled, the focused window can be resized via arrow keys or HJKL.

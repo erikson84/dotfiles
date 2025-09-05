@@ -11,14 +11,8 @@ $directory\
 $git_branch\
 $git_status\
 [](fg:green bg:blue)\
-$c\
-$rust\
-$golang\
 $nodejs\
-$php\
 $java\
-$kotlin\
-$haskell\
 $python\
 $lua\
 [](fg:blue bg:surface1)\
@@ -27,6 +21,8 @@ $package\
 $time\
 [ ](fg:surface0)\
 $line_break$character"""
+
+command_timeout = 1000
 
 palette = 'catppuccin_mocha'
 
