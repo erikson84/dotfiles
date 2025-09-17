@@ -3,6 +3,17 @@ return {
   optional = true,
   opts = function()
     local dap = require("dap")
+
+    dap.defaults.fallback.resolve_path = function(path)
+      if path:match("^%a:") then
+        return (path:gsub("^%a", string.upper))
+      end
+      if vim.loop.os_uname().version:match("Windows") then
+        path = path:gsub("/", "\\")
+      end
+      return path
+    end
+
     if not dap.adapters["pwa-chrome"] then
       dap.adapters["pwa-chrome"] = {
         type = "server",
@@ -18,10 +29,8 @@ return {
         },
       }
     end
-    for _, lang in ipairs({
-      "typescript",
-      "javascript",
-    }) do
+
+    for _, lang in ipairs({ "typescript", "javascript" }) do
       dap.configurations[lang] = dap.configurations[lang] or {}
       table.insert(dap.configurations[lang], {
         type = "pwa-chrome",
@@ -29,8 +38,10 @@ return {
         name = "Launch Chrome",
         url = "http://localhost:4200/ep-atos-prep-web",
         webRoot = "${workspaceFolder}/frontend",
+        sourceMaps = true,
       })
     end
+
     dap.configurations["java"] = dap.configurations["java"] or {}
     table.insert(dap.configurations["java"], {
       type = "java",

@@ -1,20 +1,77 @@
-local path = require("mason-core.path")
+local root_dir = vim.fn.getcwd()
+local node_modules_dir = vim.fs.find("node_modules", { path = root_dir })[1]
+local project_root = node_modules_dir and vim.fs.dirname(node_modules_dir) or "?"
 
-local mason_path = path.package_prefix("angular-language-server")
-local mason_config = require("mason-lspconfig.server_configurations.angularls")(mason_path)
+local function get_probe_dir()
+  return project_root and (project_root .. "/node_modules") or ""
+end
 
+local function get_angular_core_version()
+  if not project_root then
+    return ""
+  end
+
+  local package_json = project_root .. "/package.json"
+  if not vim.uv.fs_stat(package_json) then
+    return ""
+  end
+
+  local contents = io.open(package_json):read("*a")
+  local json = vim.json.decode(contents)
+  if not json.dependencies then
+    return ""
+  end
+
+  local angular_core_version = json.dependencies["@angular/core"]
+
+  angular_core_version = angular_core_version and angular_core_version:match("%d+%.%d+%.%d+")
+
+  return angular_core_version
+end
+
+local default_probe_dir = get_probe_dir()
+local default_angular_core_version = get_angular_core_version()
+
+-- structure should be like
+-- - $EXTENSION_PATH
+--   - @angular
+--     - language-server
+--       - bin
+--         - ngserver
+--   - typescript
+local ngserver_exe = vim.fn.exepath("ngserver")
+local ngserver_path = #(ngserver_exe or "") > 0 and vim.fs.dirname(vim.uv.fs_realpath(ngserver_exe)) or "?"
+-- local extension_path = vim.fs.normalize(vim.fs.joinpath(ngserver_path, '../../../'))
+local extension_path = vim.fs.normalize("C:/Users/S044207629/AppData/Local/nvim-data/mason/packages/angular-language-server/node_modules/")
+
+-- angularls will get module by `require.resolve(PROBE_PATH, MODULE_NAME)` of nodejs
+local ts_probe_dirs = vim.iter({ extension_path, default_probe_dir }):join(",")
+local ng_probe_dirs = vim
+  .iter({ extension_path, default_probe_dir })
+  :map(function(p)
+    return vim.fs.joinpath(p, "/@angular/language-server/node_modules")
+  end)
+  :join(",")
+
+---@type vim.lsp.Config
 return {
   "neovim/nvim-lspconfig",
   opts = {
-    setup = {
-      angularls = function(_, opts)
-        opts.on_new_config = function(new_config, new_path)
-          local angularVersion = new_config.cmd[8] -- stores current project version
-          mason_config.on_new_config(new_config, new_path)
-          vim.list_extend(new_config.cmd, { "--angularCoreVersion", angularVersion })
-        end
-        require("lspconfig").angularls.setup(opts)
-      end,
+    servers = {
+      angularls = {
+        cmd = {
+          "ngserver",
+          "--stdio",
+          "--tsProbeLocations",
+          ts_probe_dirs,
+          "--ngProbeLocations",
+          ng_probe_dirs,
+          "--angularCoreVersion",
+          default_angular_core_version,
+        },
+        filetypes = { "typescript", "html", "typescriptreact", "typescript.tsx", "htmlangular" },
+        root_markers = { "angular.json", "nx.json" },
+      },
     },
   },
 }
