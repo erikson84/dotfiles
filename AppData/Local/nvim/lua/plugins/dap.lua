@@ -6,9 +6,9 @@ return {
 
     dap.defaults.fallback.resolve_path = function(path)
       if path:match("^%a:") then
-        return (path:gsub("^%a", string.upper))
+        path = path:gsub("^%a", string.upper)
       end
-      if vim.loop.os_uname().version:match("Windows") then
+      if vim.loop.os_uname().sysname:match("Windows") then
         path = path:gsub("/", "\\")
       end
       return path
@@ -22,8 +22,7 @@ return {
         executable = {
           command = "node",
           args = {
-            require("mason-registry").get_package("js-debug-adapter"):get_install_path()
-              .. "/js-debug/src/dapDebugServer.js",
+            LazyVim.get_pkg_path("js-debug-adapter", "/js-debug/src/dapDebugServer.js"),
             "${port}",
           },
         },
