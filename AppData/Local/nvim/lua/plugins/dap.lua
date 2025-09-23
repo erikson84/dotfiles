@@ -4,16 +4,6 @@ return {
   opts = function()
     local dap = require("dap")
 
-    dap.defaults.fallback.resolve_path = function(path)
-      if path:match("^%a:") then
-        path = path:gsub("^%a", string.upper)
-      end
-      if vim.loop.os_uname().sysname:match("Windows") then
-        path = path:gsub("/", "\\")
-      end
-      return path
-    end
-
     if not dap.adapters["pwa-chrome"] then
       dap.adapters["pwa-chrome"] = {
         type = "server",
